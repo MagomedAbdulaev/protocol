@@ -1,0 +1,61 @@
+.company_container {
+    display: flex;
+    justify-content: center;
+    gap: 100px;
+}
+
+.home{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.specials{
+    text-align: center;
+}
+
+.specials__title {
+    font-size: 26px;
+}
+
+.specials__list {
+    margin: 20px 0;
+    display: grid;
+    grid-template-columns: 250px 250px;
+}
+
+.specials .list__item {
+    margin-bottom: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.create_user button{
+    cursor: pointer;
+    background-color: rgb(103, 58, 183);
+    border: none;
+    color: #fff;
+    padding: 5px;
+}
+
+.employees {
+    margin: 0 auto; /* Центрируем таблицу */
+    text-align: center;
+}
+
+.employees__title {
+    font-size: 26px;
+    margin: 30px;
+}
+
+.info {
+    text-align: center;
+}
+
+.info__item {
+    padding: 10px;
+    border: 1px solid #ccc;
+}

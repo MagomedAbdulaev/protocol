@@ -1,0 +1,132 @@
+.wrapper_login{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    min-height: 100vh;
+    background: #111;
+    width: 100%;
+}
+
+.form__login{
+    position: relative;
+    width: 300px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form__login .login--title{
+    color: #fff;
+    font-size: 36px;
+}
+
+.form__login .company--active,
+.form__login .company--container .company__item,
+.form__login .login--input {
+    position: relative;
+    width: 100%;
+    padding: 12px 20px;
+    background: transparent;
+    border: 2px solid #fff;
+    border-radius: 40px;
+    font-size: 1.2em;
+    color: #fff;
+    box-shadow: none;
+    outline: none;
+    box-sizing: border-box;
+    transition: scale 0.35s ease-in-out;
+}
+
+.form__login .login--input[aria-invalid]{
+    border: 1px solid crimson;
+    scale: 1.2;
+}
+
+.form__login .login--input:focus{
+    scale: 1.2;
+}
+
+.form__login .login--input::placeholder{
+    color: rgba(255, 255, 255, 0.75);
+}
+
+.form__login .login--submit{
+    width: 100%;
+    padding: 12px 20px;
+    box-sizing: border-box;
+    background: #0078ff;
+    background: linear-gradient(45deg, #ff357a, #fff172);
+    border: none;
+    outline: none;
+    cursor: pointer;
+    border-radius: 40px;
+    color: #fff;
+    transition: scale 0.35s ease-in-out;
+}
+
+.form__login .login--submit:hover,
+.form__login .login--submit:focus{
+    scale: 1.2 1.25;
+}
+
+.form__login .login__company{
+    width: 100%;
+}
+
+.form__login .company--active{
+    user-select: none;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.form__login .company--container{
+    background-color: #111;
+    width: 100%;
+    position: absolute;
+    z-index: 10;
+    margin: 5px 0 20px 0;
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    padding-bottom: 10px;
+}
+
+.form__login .company--container_active{
+    display: flex;
+}
+
+.form__login .arrow--icon{
+    transition: rotate 0.20s ease;
+    rotate: 0;
+}
+
+.form__login .arrow--icon_active{
+    rotate: 180deg;
+}
+
+.form__login .company--container .company__item{
+    cursor: pointer;
+    background-color: #111;
+}
+
+.form__login .errorlist{
+    color: crimson;
+    text-align: center;
+    line-height: 1.3;
+}
+
+.wrapper_login .form--redirect{
+    margin: 30px 0;
+    color: #fff;
+}
+
+.wrapper_login .form--link{
+    color: #fff;
+    padding-left: 20px;
+}

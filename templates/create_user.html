@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+    <main class="main">
+        <a class="to_home" href="{% url 'protocol_app:home' %}">Назад</a>
+        <form action="" method="post" class="form_employee">
+            {% csrf_token %}
+            {{ create_employee_form.as_div }}
+            <button type="submit" class="form_employee__submit">Отправить</button>
+        </form>
+    </main>
+{% endblock %}

@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+    <div class="wrapper_login">
+        <form method="post" action="{% url 'protocol_app:login_user' %}" class="form__login">
+            <h1 class="login--title">Авторизация</h1>
+            {% csrf_token %}
+            {{ login_form.username.errors }}
+            {{ login_form.username }}
+            {{ login_form.password.errors }}
+            {{ login_form.password }}
+            <ul class="login__company">
+                <li class="company__item company--active">
+                    <p class="company__value">{{ companies.first.name }}</p>
+                    <input type="hidden" name="company" value="{{ companies.first.name }}" class="input--hidden">
+                    <img src="{% static 'images/icons/arrow-down.png' %}" alt="Стрелка вниз" width="18px" height="18px" class="arrow--icon">
+                </li>
+                <div class="company--container">
+                    {% for comp in companies %}
+                        <li class="company__item">
+                            <p class="company__value">{{ comp.name }}</p>
+                        </li>
+                    {% endfor %}
+                </div>
+            </ul>
+            <button class="login--submit" type="submit">Войти</button>
+        </form>
+    </div>
+{% endblock %}

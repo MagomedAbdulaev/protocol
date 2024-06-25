@@ -1,0 +1,9 @@
+{% load static %}
+<header class="header">
+    <h1 class="header__title">Добро пожаловать, {{ user.username }}</h1>
+    <section class="header__user">
+        <a href="{% url 'protocol_app:logout' %}" class="user--login" title="Выйти">
+            <img src="{% static 'images/icons/exit-icon.png' %}" alt="Выйти" width="48px" height="48px">
+        </a>
+    </section>
+</header>

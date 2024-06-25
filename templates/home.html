@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <main class="main">
+        <div class="home">
+            <div class="company_container">
+                <aside class="specials">
+                    <h2 class="specials__title">Специальности компании {{ company.name }}</h2>
+                    <ul class="specials__list">
+                        {% for spec in company.specials.all %}
+                            <li class="list__item">
+                                <h3 class="item">Должность - {{ spec.post }}</h3>
+                                <p class="item">Номер программы - {{ spec.number }}</p>
+                                <p class="item">Группа ЭБ - {{ spec.group_eb }}</p>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                </aside>
+                <a href="{% url 'protocol_app:create_user' %}" class="create_user">
+                    <button type="button">Форма для создания удостоверений</button>
+                </a>
+            </div>
+            <table class="employees">
+                    <caption class="employees__title">Сотрудники компании {{ company.name }}</caption>
+                    <tr class="info">
+                        <td class="info__item">ФИО</td>
+                        <td class="info__item">Дата проверки знаний</td>
+                        <td class="info__item">ФИО председателя комиссии</td>
+                        <td class="info__item">Должность</td>
+                    </tr>
+                    {% for empl in company.employee_set.all %}
+                        <tr class="info">
+                            <td class="info__item">{{ empl.full_name }}</td>
+                            <td class="info__item">{{ empl.date_check }}</td>
+                            <td class="info__item">{{ empl.name_chairman }}</td>
+                            <td class="info__item">{{ empl.special.post }}</td>
+                        </tr>
+                    {% endfor %}
+                </table>
+        </div>
+    </main>
+{% endblock %}
